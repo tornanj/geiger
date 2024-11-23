@@ -1,0 +1,10 @@
+#set terminal png
+#set output 'campo_electrico_superpuesto.png'
+
+set pm3d map
+set nokey
+set title "Campo Eléctrico Superpuesto al Potencial"
+
+# Graficar la distribución del potencial eléctrico con pm3d
+splot 'output.txt' using 1:2:3 with pm3d, \
+      'vectores.txt' using 1:2:(0):3:4:(1) with vectors lc rgb "green" notitle
